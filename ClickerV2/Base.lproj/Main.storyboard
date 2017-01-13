@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HVD_Comic_Serif_Pro.otf">
+            <string>HVDComicSerifPro</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ClickerV2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +24,242 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="FSa-78-1ju"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="score" translatesAutoresizingMaskIntoConstraints="NO" id="lwd-04-szb"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K70-dE-EOv">
+                                <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iv-xV-5rq">
+                                <state key="normal" image="input"/>
+                                <connections>
+                                    <action selector="enhancedWeaponClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HEo-Lk-IbX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fe4-z3-6YW">
+                                <state key="normal" image="input"/>
+                                <connections>
+                                    <action selector="enhancedFriendWeapon:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YHG-nx-03O"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dégats :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vom-i4-JQY">
+                                <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="17"/>
+                                <color key="textColor" red="0.7349158653846154" green="0.19578985555115763" blue="0.13312467554027446" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Zc-S9-9ZI">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="vvn-Xj-IHA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="20"/>
+                                <color key="textColor" red="0.73491586539999998" green="0.19578985560000001" blue="0.13312467550000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 $" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gf2-uJ-jii">
+                                <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="17"/>
+                                <color key="textColor" red="0.73491586539999998" green="0.19578985560000001" blue="0.13312467550000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Magie :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhH-Qj-paF">
+                                <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="17"/>
+                                <color key="textColor" red="0.11663860387790019" green="0.51446314102564106" blue="0.053003312033799113" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSO-Vs-FDJ">
+                                <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="20"/>
+                                <color key="textColor" red="0.18762221169112236" green="0.60697115384615385" blue="0.066802126773382084" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 $" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgz-x2-vbP">
+                                <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="17"/>
+                                <color key="textColor" red="0.22484628600000001" green="0.6069711538" blue="0.070379739890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="S_Sword16" translatesAutoresizingMaskIntoConstraints="NO" id="Ssh-5y-YeB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="S_Sword18" translatesAutoresizingMaskIntoConstraints="NO" id="Ox3-Ew-gXZ"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LVL : 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oia-Ot-z0g">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHj-MJ-4wy">
+                                <state key="normal" image="input"/>
+                                <connections>
+                                    <action selector="enhancedAutoClicks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wMU-MR-cjN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 $" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DU3-Oh-5Fr">
+                                <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="17"/>
+                                <color key="textColor" red="0.73491586539999998" green="0.6132100886359213" blue="0.075550023751273121" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto Clics :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgP-tf-cgd">
+                                <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="17"/>
+                                <color key="textColor" red="0.73491586539999998" green="0.61321008860000004" blue="0.07555002375" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="W_Sword016" translatesAutoresizingMaskIntoConstraints="NO" id="3zV-iD-ZW4"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZc-8e-YH6">
+                                <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="15"/>
+                                <color key="textColor" red="0.22484628600000001" green="0.6069711538" blue="0.070379739890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HP : 10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJL-Zs-dqE">
+                                <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="20"/>
+                                <color key="textColor" red="0.10799276286079509" green="0.3454818149122395" blue="0.75592948717948716" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izw-oo-Bq1">
+                                <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="17"/>
+                                <color key="textColor" red="0.73491586539999998" green="0.6132100886359213" blue="0.075550023751273121" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXy-kC-Wwn">
+                                <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="15"/>
+                                <color key="textColor" red="0.73491586539999998" green="0.19578985560000001" blue="0.13312467550000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.52941176469999995" green="0.30980392159999998" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96s-qr-DvP">
+                                <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="15"/>
+                                <color key="textColor" red="0.73491586539999998" green="0.61321008860000004" blue="0.07555002375" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dg6-gL-sul">
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                <state key="normal" image="bat"/>
+                                <connections>
+                                    <action selector="Clicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8OG-qF-BCt"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4Zc-S9-9ZI" firstAttribute="centerY" secondItem="5iv-xV-5rq" secondAttribute="centerY" id="0tt-gL-cbU"/>
+                            <constraint firstItem="QHj-MJ-4wy" firstAttribute="width" secondItem="FSa-78-1ju" secondAttribute="width" multiplier="0.33" id="0wV-sb-PY9"/>
+                            <constraint firstItem="Oia-Ot-z0g" firstAttribute="bottom" secondItem="Dg6-gL-sul" secondAttribute="bottom" multiplier="0.85" id="1pm-KF-DNr"/>
+                            <constraint firstItem="QHj-MJ-4wy" firstAttribute="height" secondItem="FSa-78-1ju" secondAttribute="width" multiplier="0.33" id="3gq-ng-6x1"/>
+                            <constraint firstAttribute="trailing" secondItem="Oia-Ot-z0g" secondAttribute="trailing" id="3yS-te-PH9"/>
+                            <constraint firstItem="5iv-xV-5rq" firstAttribute="height" secondItem="FSa-78-1ju" secondAttribute="width" multiplier="0.33" id="5ZL-gE-mqS"/>
+                            <constraint firstItem="Vom-i4-JQY" firstAttribute="width" secondItem="5iv-xV-5rq" secondAttribute="width" id="5iJ-dY-S0i"/>
+                            <constraint firstItem="vSO-Vs-FDJ" firstAttribute="centerY" secondItem="fe4-z3-6YW" secondAttribute="centerY" id="5m4-mS-CQM"/>
+                            <constraint firstItem="zgP-tf-cgd" firstAttribute="top" secondItem="QHj-MJ-4wy" secondAttribute="top" multiplier="1.03" id="5s2-bz-AOB"/>
+                            <constraint firstItem="Dg6-gL-sul" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6HQ-Rd-5KH"/>
+                            <constraint firstItem="FSa-78-1ju" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="6qs-uU-gsg"/>
+                            <constraint firstItem="Vom-i4-JQY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6uW-Te-IGu"/>
+                            <constraint firstItem="5iv-xV-5rq" firstAttribute="width" secondItem="FSa-78-1ju" secondAttribute="width" multiplier="0.33" id="749-JD-dpp"/>
+                            <constraint firstItem="K70-dE-EOv" firstAttribute="width" secondItem="lwd-04-szb" secondAttribute="width" multiplier="0.5" id="7Wh-x3-zDe"/>
+                            <constraint firstItem="vSO-Vs-FDJ" firstAttribute="width" secondItem="fe4-z3-6YW" secondAttribute="width" id="7ZJ-CI-EE2"/>
+                            <constraint firstItem="Ssh-5y-YeB" firstAttribute="height" secondItem="Dg6-gL-sul" secondAttribute="height" multiplier="0.1" id="7yp-LQ-3ta"/>
+                            <constraint firstItem="SZc-8e-YH6" firstAttribute="top" secondItem="CXy-kC-Wwn" secondAttribute="bottom" multiplier="1.2" id="9Ex-cY-Rh4"/>
+                            <constraint firstItem="Zgz-x2-vbP" firstAttribute="width" secondItem="fe4-z3-6YW" secondAttribute="width" id="9O1-O8-Qsh"/>
+                            <constraint firstItem="SZc-8e-YH6" firstAttribute="width" secondItem="Dg6-gL-sul" secondAttribute="width" multiplier="0.3" id="9YT-GP-6Io"/>
+                            <constraint firstItem="SZc-8e-YH6" firstAttribute="leading" secondItem="Ox3-Ew-gXZ" secondAttribute="trailing" constant="1" id="BaO-De-DcB"/>
+                            <constraint firstItem="DU3-Oh-5Fr" firstAttribute="centerX" secondItem="QHj-MJ-4wy" secondAttribute="centerX" id="C5f-SE-06O"/>
+                            <constraint firstItem="Dg6-gL-sul" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DPf-Jo-Zrp"/>
+                            <constraint firstItem="Ox3-Ew-gXZ" firstAttribute="top" secondItem="Ssh-5y-YeB" secondAttribute="bottom" multiplier="1.2" id="F3P-hv-aWO"/>
+                            <constraint firstItem="FSa-78-1ju" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="FDM-w7-cvb"/>
+                            <constraint firstItem="Ox3-Ew-gXZ" firstAttribute="height" secondItem="Dg6-gL-sul" secondAttribute="height" multiplier="0.1" id="FKh-hl-WNs"/>
+                            <constraint firstItem="K70-dE-EOv" firstAttribute="height" secondItem="lwd-04-szb" secondAttribute="height" multiplier="0.5" id="FZ8-Es-zlV"/>
+                            <constraint firstItem="lwd-04-szb" firstAttribute="height" secondItem="FSa-78-1ju" secondAttribute="height" multiplier="0.15" id="GPI-CK-bCR"/>
+                            <constraint firstItem="zJL-Zs-dqE" firstAttribute="width" secondItem="FSa-78-1ju" secondAttribute="width" id="GTT-5x-cNc"/>
+                            <constraint firstItem="zgP-tf-cgd" firstAttribute="width" secondItem="QHj-MJ-4wy" secondAttribute="width" id="GvJ-PU-use"/>
+                            <constraint firstItem="K70-dE-EOv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="HV5-nr-I6Q"/>
+                            <constraint firstItem="K70-dE-EOv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hw1-bu-Vf1"/>
+                            <constraint firstItem="3zV-iD-ZW4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ig0-kg-JNb"/>
+                            <constraint firstItem="nhH-Qj-paF" firstAttribute="leading" secondItem="5iv-xV-5rq" secondAttribute="trailing" id="JKr-Zk-4iK"/>
+                            <constraint firstItem="nhH-Qj-paF" firstAttribute="top" secondItem="fe4-z3-6YW" secondAttribute="top" multiplier="1.03" id="Jpd-O8-Th7"/>
+                            <constraint firstAttribute="trailing" secondItem="FSa-78-1ju" secondAttribute="trailing" id="KgR-o3-Tz5"/>
+                            <constraint firstItem="lwd-04-szb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Kuh-e1-oOq"/>
+                            <constraint firstItem="Ox3-Ew-gXZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LA8-62-hvc"/>
+                            <constraint firstItem="Zgz-x2-vbP" firstAttribute="bottom" secondItem="fe4-z3-6YW" secondAttribute="bottom" multiplier="0.99" id="MOd-dp-sJ2"/>
+                            <constraint firstItem="3zV-iD-ZW4" firstAttribute="top" secondItem="Ox3-Ew-gXZ" secondAttribute="bottom" multiplier="1.2" id="MX8-vi-zZH"/>
+                            <constraint firstItem="Oia-Ot-z0g" firstAttribute="width" secondItem="Dg6-gL-sul" secondAttribute="width" id="PcL-dP-MDZ"/>
+                            <constraint firstAttribute="trailing" secondItem="QHj-MJ-4wy" secondAttribute="trailing" id="Q2t-7n-fEq"/>
+                            <constraint firstItem="zJL-Zs-dqE" firstAttribute="centerX" secondItem="fe4-z3-6YW" secondAttribute="centerX" id="QIv-3V-xkS"/>
+                            <constraint firstItem="izw-oo-Bq1" firstAttribute="width" secondItem="QHj-MJ-4wy" secondAttribute="width" id="Ro3-bV-7wG"/>
+                            <constraint firstAttribute="trailing" secondItem="Dg6-gL-sul" secondAttribute="trailing" id="Tvt-Aw-LJx"/>
+                            <constraint firstItem="zJL-Zs-dqE" firstAttribute="centerX" secondItem="vSO-Vs-FDJ" secondAttribute="centerX" id="U9V-OF-37E"/>
+                            <constraint firstItem="Dg6-gL-sul" firstAttribute="height" secondItem="FSa-78-1ju" secondAttribute="width" id="UAQ-PA-MQJ"/>
+                            <constraint firstItem="96s-qr-DvP" firstAttribute="height" secondItem="3zV-iD-ZW4" secondAttribute="height" id="WM3-0r-8Hk"/>
+                            <constraint firstItem="zgP-tf-cgd" firstAttribute="leading" secondItem="fe4-z3-6YW" secondAttribute="trailing" id="Wcm-t2-Mki"/>
+                            <constraint firstItem="izw-oo-Bq1" firstAttribute="leading" secondItem="vSO-Vs-FDJ" secondAttribute="trailing" id="XKB-iH-oCH"/>
+                            <constraint firstItem="Ox3-Ew-gXZ" firstAttribute="width" secondItem="Dg6-gL-sul" secondAttribute="width" multiplier="0.1" id="Xku-rp-Vgz"/>
+                            <constraint firstItem="zJL-Zs-dqE" firstAttribute="height" secondItem="FSa-78-1ju" secondAttribute="height" multiplier="0.1" id="YRV-mt-2cg"/>
+                            <constraint firstItem="nhH-Qj-paF" firstAttribute="width" secondItem="fe4-z3-6YW" secondAttribute="width" id="Ytg-Xn-Zu5"/>
+                            <constraint firstItem="FSa-78-1ju" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="c1q-9Q-Yux"/>
+                            <constraint firstItem="izw-oo-Bq1" firstAttribute="centerY" secondItem="QHj-MJ-4wy" secondAttribute="centerY" id="cNR-ga-wFF"/>
+                            <constraint firstItem="CXy-kC-Wwn" firstAttribute="height" secondItem="Ssh-5y-YeB" secondAttribute="height" id="dMq-Ft-JrH"/>
+                            <constraint firstItem="SZc-8e-YH6" firstAttribute="height" secondItem="Ox3-Ew-gXZ" secondAttribute="height" id="e1V-wM-48r"/>
+                            <constraint firstItem="4Zc-S9-9ZI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="e1s-uk-BC5"/>
+                            <constraint firstItem="fe4-z3-6YW" firstAttribute="width" secondItem="FSa-78-1ju" secondAttribute="width" multiplier="0.33" id="eFF-mx-TiK"/>
+                            <constraint firstItem="96s-qr-DvP" firstAttribute="width" secondItem="Dg6-gL-sul" secondAttribute="width" multiplier="0.3" id="eX2-q7-udq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FSa-78-1ju" secondAttribute="bottom" id="fTc-AP-4Bv"/>
+                            <constraint firstItem="fe4-z3-6YW" firstAttribute="height" secondItem="FSa-78-1ju" secondAttribute="width" multiplier="0.33" id="fsv-8i-1Tz"/>
+                            <constraint firstItem="3zV-iD-ZW4" firstAttribute="height" secondItem="Dg6-gL-sul" secondAttribute="height" multiplier="0.1" id="gSa-Yw-VE0"/>
+                            <constraint firstItem="96s-qr-DvP" firstAttribute="top" secondItem="SZc-8e-YH6" secondAttribute="bottom" multiplier="1.2" id="gaU-ZI-9BP"/>
+                            <constraint firstItem="Vom-i4-JQY" firstAttribute="top" secondItem="5iv-xV-5rq" secondAttribute="top" multiplier="1.03" id="gx4-Q0-hVW"/>
+                            <constraint firstItem="zJL-Zs-dqE" firstAttribute="centerX" secondItem="Zgz-x2-vbP" secondAttribute="centerX" id="iS4-Vz-O6w"/>
+                            <constraint firstItem="Ssh-5y-YeB" firstAttribute="width" secondItem="Dg6-gL-sul" secondAttribute="width" multiplier="0.1" id="j4V-2w-6gJ"/>
+                            <constraint firstItem="5iv-xV-5rq" firstAttribute="bottom" secondItem="FSa-78-1ju" secondAttribute="bottom" multiplier="0.95" id="jq4-ZU-nae"/>
+                            <constraint firstItem="Gf2-uJ-jii" firstAttribute="width" secondItem="5iv-xV-5rq" secondAttribute="width" id="lVH-HZ-gdm"/>
+                            <constraint firstItem="Ssh-5y-YeB" firstAttribute="top" secondItem="Dg6-gL-sul" secondAttribute="top" id="nM8-0f-cQV"/>
+                            <constraint firstItem="5iv-xV-5rq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nmX-3P-pK3"/>
+                            <constraint firstItem="CXy-kC-Wwn" firstAttribute="width" secondItem="Dg6-gL-sul" secondAttribute="width" multiplier="0.3" id="oyE-aP-fCK"/>
+                            <constraint firstItem="DU3-Oh-5Fr" firstAttribute="width" secondItem="QHj-MJ-4wy" secondAttribute="width" id="p4p-BD-rEB"/>
+                            <constraint firstItem="FSa-78-1ju" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="phP-vS-Dan"/>
+                            <constraint firstItem="4Zc-S9-9ZI" firstAttribute="width" secondItem="5iv-xV-5rq" secondAttribute="width" id="qEa-kK-4re"/>
+                            <constraint firstItem="lwd-04-szb" firstAttribute="width" secondItem="FSa-78-1ju" secondAttribute="width" id="sz6-5Z-gXX"/>
+                            <constraint firstItem="fe4-z3-6YW" firstAttribute="bottom" secondItem="FSa-78-1ju" secondAttribute="bottom" multiplier="0.95" id="tMS-ft-Hod"/>
+                            <constraint firstItem="96s-qr-DvP" firstAttribute="leading" secondItem="3zV-iD-ZW4" secondAttribute="trailing" constant="1" id="taD-I5-Lj3"/>
+                            <constraint firstItem="lwd-04-szb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tcB-7m-069"/>
+                            <constraint firstItem="CXy-kC-Wwn" firstAttribute="leading" secondItem="Ssh-5y-YeB" secondAttribute="trailing" constant="1" id="u0J-X7-j1x"/>
+                            <constraint firstItem="DU3-Oh-5Fr" firstAttribute="bottom" secondItem="QHj-MJ-4wy" secondAttribute="bottom" multiplier="0.99" id="u1W-eL-ow4"/>
+                            <constraint firstItem="Ssh-5y-YeB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vOr-br-jXJ"/>
+                            <constraint firstItem="CXy-kC-Wwn" firstAttribute="top" secondItem="Dg6-gL-sul" secondAttribute="top" id="vai-dH-rg2"/>
+                            <constraint firstItem="Dg6-gL-sul" firstAttribute="width" secondItem="FSa-78-1ju" secondAttribute="width" id="vfN-Em-M8S"/>
+                            <constraint firstItem="Gf2-uJ-jii" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="w7r-Fk-fZz"/>
+                            <constraint firstItem="zJL-Zs-dqE" firstAttribute="centerX" secondItem="lwd-04-szb" secondAttribute="centerX" id="wD6-Mm-JO7"/>
+                            <constraint firstItem="zJL-Zs-dqE" firstAttribute="top" secondItem="Dg6-gL-sul" secondAttribute="top" id="wyZ-cd-Q3d"/>
+                            <constraint firstItem="3zV-iD-ZW4" firstAttribute="width" secondItem="Dg6-gL-sul" secondAttribute="width" multiplier="0.1" id="x1j-yI-3QQ"/>
+                            <constraint firstItem="Gf2-uJ-jii" firstAttribute="bottom" secondItem="5iv-xV-5rq" secondAttribute="bottom" multiplier="0.99" id="xLR-ex-KaB"/>
+                            <constraint firstItem="QHj-MJ-4wy" firstAttribute="bottom" secondItem="FSa-78-1ju" secondAttribute="bottom" multiplier="0.95" id="z74-hX-iAE"/>
+                            <constraint firstItem="K70-dE-EOv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zTF-YQ-Qlq"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="autoClickEnhance" destination="QHj-MJ-4wy" id="qa1-NX-x4O"/>
+                        <outlet property="buttonEnhance1" destination="5iv-xV-5rq" id="8Qe-KL-vg3"/>
+                        <outlet property="buttonEnhance2" destination="fe4-z3-6YW" id="x1q-E1-jJh"/>
+                        <outlet property="displayAutoClicksDmgsDealt" destination="96s-qr-DvP" id="P39-4K-awX"/>
+                        <outlet property="displayDmgsDealt" destination="CXy-kC-Wwn" id="hrl-6a-AZn"/>
+                        <outlet property="displayFriendsDmgsDealt" destination="SZc-8e-YH6" id="xTp-E6-a4S"/>
+                        <outlet property="displayLevel" destination="Oia-Ot-z0g" id="8h8-5m-buX"/>
+                        <outlet property="monsterButton" destination="Dg6-gL-sul" id="8Fc-l9-r2S"/>
+                        <outlet property="monsterHealth" destination="zJL-Zs-dqE" id="6oK-18-vtd"/>
+                        <outlet property="myAutoClicksDamages" destination="izw-oo-Bq1" id="U3w-qf-h7H"/>
+                        <outlet property="myDamagesDone" destination="4Zc-S9-9ZI" id="Xf7-73-yXR"/>
+                        <outlet property="myFriendDamagesDone" destination="vSO-Vs-FDJ" id="ZlN-Xf-diW"/>
+                        <outlet property="myGolds" destination="K70-dE-EOv" id="JsK-fX-dQB"/>
+                        <outlet property="priceEnhance1" destination="Gf2-uJ-jii" id="mD8-mP-FsB"/>
+                        <outlet property="priceEnhance2" destination="Zgz-x2-vbP" id="2wO-0N-9m0"/>
+                        <outlet property="princeEnhance3" destination="DU3-Oh-5Fr" id="Wst-Nm-qPW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="S_Sword16" width="34" height="34"/>
+        <image name="S_Sword18" width="34" height="34"/>
+        <image name="W_Sword016" width="34" height="34"/>
+        <image name="background" width="375" height="667"/>
+        <image name="bat" width="128" height="128"/>
+        <image name="input" width="256" height="109"/>
+        <image name="score" width="298" height="101"/>
+    </resources>
 </document>
